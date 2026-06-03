@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
+</head>
+
+<body>
+
+<model-viewer
+  src="HeartLayers.glb"
+  poster="poster.webp"
+  camera-controls
+  autoplay
+  shadow-intensity="1"
+  style="width:100%; height:100vh;">
+
+</model-viewer>
+
+<script>
+  function sendToStoryline(partName) {
+    window.parent.postMessage(
+      {
+        type: "heartHotspotClicked",
+        part: partName
+      },
+      "*"
+    );
+  }
+</script>
+
+</body>
+</html>
